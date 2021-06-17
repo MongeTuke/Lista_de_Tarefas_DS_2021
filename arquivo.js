@@ -9,8 +9,10 @@ function criarBotaoDelete(){
     return botaoDelete;
 }
  
-function deletarTarefa(){
-    console.log("deletar tarefa");
+function deletarTarefa(evento){
+    const botaoDeleteClicado = evento.target
+    const itemDaLista = botaoDeleteClicado.parentElement
+    itemDaLista.remove()
 }
 
 function criarTarefa(evento){
