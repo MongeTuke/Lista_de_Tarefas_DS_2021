@@ -15,6 +15,20 @@ function deletarTarefa(evento){
     itemDaLista.remove()
 }
 
+function criarBotaoConcluir(){
+    const botaoConcluir = document.createElement('input')
+    botaoConcluir.setAttribute('type', 'checkbox')
+    botaoConcluir.classList = "form-check-input"
+
+    return botaoConcluir
+} 
+
+function concluirTarefa(evento){
+    const botaoConcluirClicado = evento.target
+    const itemDaListaConcluido = botaoConcluirClicado.parentElement
+    itemDaListaConcluido.classList.toggle('tarefa_concluida')
+}
+
 function criarTarefa(evento){
     evento.preventDefault()
     const valorTarefa = "- " + inputTarefa.value + '.'
@@ -25,10 +39,12 @@ function criarTarefa(evento){
     novaLabel.className = "form-check-label"
 
     novoItem = document.createElement('li')
+
+    novoItem.appendChild(criarBotaoConcluir())
     novoItem.appendChild(novaLabel)
     novoItem.appendChild(criarBotaoDelete())
 
     listaDeTarefas.appendChild(novoItem)
     inputTarefa.value = ""
 }
-novaTarefa.addEventListener('click', criarTarefa);
+novaTarefa.addEventListener('click', criarTarefa)
