@@ -193,4 +193,6 @@ body {
   .lista_atividades{
     margin-left: 2%;
   }
-  
+  .tarefa_concluida{
+    text-decoration: line-through;
+}
