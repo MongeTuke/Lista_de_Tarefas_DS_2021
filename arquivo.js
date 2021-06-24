@@ -19,6 +19,7 @@ function criarBotaoConcluir(){
     const botaoConcluir = document.createElement('input')
     botaoConcluir.setAttribute('type', 'checkbox')
     botaoConcluir.classList = "form-check-input"
+    botaoConcluir.addEventListener('click', concluirTarefa)
 
     return botaoConcluir
 } 
